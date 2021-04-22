@@ -1,0 +1,51 @@
+.enfants{
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em
+  }
+img {
+    width: 360px;
+    height: 200px; 
+}
+.list {
+    position:relative;
+    overflow: hidden;
+}
+.title {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    background: #5a000a66;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1;
+}
+.image {
+    line-height: 0;
+}
+.list:hover .title {
+    opacity: 1;
+  }
+.image img {
+    transition: filter 0.3s ease-in;
+    transition: scale(1.1);
+  }
+.list:hover .image img { 
+    filter: blur(2px);
+}
+@media (hover: none) { 
+    .title {
+      opacity: 1;
+    }
+    .image img {
+      filter: blur(2px);
+    }
+  }
